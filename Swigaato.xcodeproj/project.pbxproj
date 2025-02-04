@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		021832B02D4B761A0043AF7D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021832AF2D4B761A0043AF7D /* SignUpView.swift */; };
+		021832B52D4B90B20043AF7D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021832B42D4B90B20043AF7D /* HomeView.swift */; };
+		0254E49C2D4CACC90000BB78 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254E49B2D4CACC90000BB78 /* FoodModel.swift */; };
+		0254E49E2D4CACE40000BB78 /* FoodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254E49D2D4CACE40000BB78 /* FoodItemView.swift */; };
+		0254E4A02D4CACF80000BB78 /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254E49F2D4CACF80000BB78 /* FoodData.swift */; };
+		0254E4A42D4CE0B10000BB78 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254E4A32D4CE0B10000BB78 /* AddItemView.swift */; };
+		02720EB02D4A4CF9001D9555 /* FigmaToSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02720EAF2D4A4CF9001D9555 /* FigmaToSwiftUIApp.swift */; };
+		02720EB22D4A4CF9001D9555 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02720EB12D4A4CF9001D9555 /* ContentView.swift */; };
+		02720EB42D4A4D04001D9555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02720EB32D4A4D04001D9555 /* Assets.xcassets */; };
+		02720EB72D4A4D04001D9555 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02720EB62D4A4D04001D9555 /* Preview Assets.xcassets */; };
+		02720EC52D4A4DAE001D9555 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02720EC42D4A4DAE001D9555 /* LoginView.swift */; };
+		02720EC72D4A5711001D9555 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02720EC62D4A5711001D9555 /* SplashScreenView.swift */; };
+		02720EC92D4A5973001D9555 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02720EC82D4A5973001D9555 /* OnboardingView.swift */; };
+		028A373E2D4CF034008B5D81 /* FoodDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A373D2D4CF033008B5D81 /* FoodDetailsView.swift */; };
+		029B50122D5098B400AF619A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50112D5098B300AF619A /* ProfileView.swift */; };
+		029B50142D5098CD00AF619A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50132D5098CD00AF619A /* EditProfileView.swift */; };
+		029B50162D5098E300AF619A /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50152D5098E300AF619A /* AppSettingsView.swift */; };
+		029B50182D5098F000AF619A /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50172D5098F000AF619A /* NotificationSettingsView.swift */; };
+		029B501A2D509E5800AF619A /* IndianFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50192D509E5800AF619A /* IndianFoodView.swift */; };
+		029B501C2D509E6E00AF619A /* ChineseFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B501B2D509E6E00AF619A /* ChineseFoodView.swift */; };
+		029B50222D50A67D00AF619A /* FoodDataIndian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50212D50A67D00AF619A /* FoodDataIndian.swift */; };
+		029B50242D50A68F00AF619A /* FoodDataChinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50232D50A68F00AF619A /* FoodDataChinese.swift */; };
+		02BB8D602D4C8CEA003F2951 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8D5F2D4C8CEA003F2951 /* ForgetPasswordView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		021832AF2D4B761A0043AF7D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		021832B42D4B90B20043AF7D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0254E49B2D4CACC90000BB78 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		0254E49D2D4CACE40000BB78 /* FoodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemView.swift; sourceTree = "<group>"; };
+		0254E49F2D4CACF80000BB78 /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
+		0254E4A32D4CE0B10000BB78 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		02720EAC2D4A4CF9001D9555 /* Swigaato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swigaato.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02720EAF2D4A4CF9001D9555 /* FigmaToSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaToSwiftUIApp.swift; sourceTree = "<group>"; };
+		02720EB12D4A4CF9001D9555 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		02720EB32D4A4D04001D9555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02720EB62D4A4D04001D9555 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		02720EC42D4A4DAE001D9555 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		02720EC62D4A5711001D9555 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		02720EC82D4A5973001D9555 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		028A373D2D4CF033008B5D81 /* FoodDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsView.swift; sourceTree = "<group>"; };
+		029B50112D5098B300AF619A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		029B50132D5098CD00AF619A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		029B50152D5098E300AF619A /* AppSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsView.swift; sourceTree = "<group>"; };
+		029B50172D5098F000AF619A /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		029B50192D509E5800AF619A /* IndianFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndianFoodView.swift; sourceTree = "<group>"; };
+		029B501B2D509E6E00AF619A /* ChineseFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseFoodView.swift; sourceTree = "<group>"; };
+		029B50212D50A67D00AF619A /* FoodDataIndian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataIndian.swift; sourceTree = "<group>"; };
+		029B50232D50A68F00AF619A /* FoodDataChinese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataChinese.swift; sourceTree = "<group>"; };
+		02BB8D5F2D4C8CEA003F2951 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02720EA92D4A4CF9001D9555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		021832B12D4B90500043AF7D /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				021832B42D4B90B20043AF7D /* HomeView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		021832B22D4B90740043AF7D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				02720EAF2D4A4CF9001D9555 /* FigmaToSwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		021832B32D4B907E0043AF7D /* AppEntry */ = {
+			isa = PBXGroup;
+			children = (
+				02720EB12D4A4CF9001D9555 /* ContentView.swift */,
+			);
+			path = AppEntry;
+			sourceTree = "<group>";
+		};
+		0254E49A2D4CAC7D0000BB78 /* FoodListing */ = {
+			isa = PBXGroup;
+			children = (
+				029B50252D50A72100AF619A /* FoodData */,
+				029B501E2D509ED900AF619A /* FoodDetailsScreen */,
+				029B501D2D509E9B00AF619A /* AddToCartScreen */,
+				029B50102D50987700AF619A /* SubMenuScreens */,
+				0254E49B2D4CACC90000BB78 /* FoodModel.swift */,
+				0254E49D2D4CACE40000BB78 /* FoodItemView.swift */,
+			);
+			path = FoodListing;
+			sourceTree = "<group>";
+		};
+		02720EA32D4A4CF9001D9555 = {
+			isa = PBXGroup;
+			children = (
+				02720EAE2D4A4CF9001D9555 /* Swigaato */,
+				02720EAD2D4A4CF9001D9555 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02720EAD2D4A4CF9001D9555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02720EAC2D4A4CF9001D9555 /* Swigaato.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02720EAE2D4A4CF9001D9555 /* Swigaato */ = {
+			isa = PBXGroup;
+			children = (
+				021832B32D4B907E0043AF7D /* AppEntry */,
+				021832B22D4B90740043AF7D /* App */,
+				02720EBF2D4A4D61001D9555 /* Core */,
+				02720EBE2D4A4D36001D9555 /* OnboardingScreen */,
+				02720EBD2D4A4D19001D9555 /* LaunchScreen */,
+				02720EB32D4A4D04001D9555 /* Assets.xcassets */,
+				02720EB52D4A4D04001D9555 /* Preview Content */,
+			);
+			path = Swigaato;
+			sourceTree = "<group>";
+		};
+		02720EB52D4A4D04001D9555 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				02720EB62D4A4D04001D9555 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		02720EBD2D4A4D19001D9555 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				02720EC62D4A5711001D9555 /* SplashScreenView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		02720EBE2D4A4D36001D9555 /* OnboardingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				02720EC82D4A5973001D9555 /* OnboardingView.swift */,
+			);
+			path = OnboardingScreen;
+			sourceTree = "<group>";
+		};
+		02720EBF2D4A4D61001D9555 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0254E49A2D4CAC7D0000BB78 /* FoodListing */,
+				021832B12D4B90500043AF7D /* HomeScreen */,
+				02720EC02D4A4D68001D9555 /* Auth */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		02720EC02D4A4D68001D9555 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				02720EC32D4A4D90001D9555 /* ForgetPassword */,
+				02720EC22D4A4D7E001D9555 /* SignUpView */,
+				02720EC12D4A4D75001D9555 /* LoginView */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		02720EC12D4A4D75001D9555 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				02720EC42D4A4DAE001D9555 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		02720EC22D4A4D7E001D9555 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				021832AF2D4B761A0043AF7D /* SignUpView.swift */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		02720EC32D4A4D90001D9555 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				02BB8D5F2D4C8CEA003F2951 /* ForgetPasswordView.swift */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		029B50102D50987700AF619A /* SubMenuScreens */ = {
+			isa = PBXGroup;
+			children = (
+				029B50112D5098B300AF619A /* ProfileView.swift */,
+				029B50132D5098CD00AF619A /* EditProfileView.swift */,
+				029B50152D5098E300AF619A /* AppSettingsView.swift */,
+				029B50172D5098F000AF619A /* NotificationSettingsView.swift */,
+				029B50192D509E5800AF619A /* IndianFoodView.swift */,
+				029B501B2D509E6E00AF619A /* ChineseFoodView.swift */,
+			);
+			path = SubMenuScreens;
+			sourceTree = "<group>";
+		};
+		029B501D2D509E9B00AF619A /* AddToCartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0254E4A32D4CE0B10000BB78 /* AddItemView.swift */,
+			);
+			path = AddToCartScreen;
+			sourceTree = "<group>";
+		};
+		029B501E2D509ED900AF619A /* FoodDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				028A373D2D4CF033008B5D81 /* FoodDetailsView.swift */,
+			);
+			path = FoodDetailsScreen;
+			sourceTree = "<group>";
+		};
+		029B50252D50A72100AF619A /* FoodData */ = {
+			isa = PBXGroup;
+			children = (
+				0254E49F2D4CACF80000BB78 /* FoodData.swift */,
+				029B50212D50A67D00AF619A /* FoodDataIndian.swift */,
+				029B50232D50A68F00AF619A /* FoodDataChinese.swift */,
+			);
+			path = FoodData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02720EAB2D4A4CF9001D9555 /* Swigaato */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02720EBA2D4A4D04001D9555 /* Build configuration list for PBXNativeTarget "Swigaato" */;
+			buildPhases = (
+				02720EA82D4A4CF9001D9555 /* Sources */,
+				02720EA92D4A4CF9001D9555 /* Frameworks */,
+				02720EAA2D4A4CF9001D9555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Swigaato;
+			productName = FigmaToSwiftUI;
+			productReference = 02720EAC2D4A4CF9001D9555 /* Swigaato.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02720EA42D4A4CF9001D9555 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					02720EAB2D4A4CF9001D9555 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 02720EA72D4A4CF9001D9555 /* Build configuration list for PBXProject "Swigaato" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02720EA32D4A4CF9001D9555;
+			productRefGroup = 02720EAD2D4A4CF9001D9555 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02720EAB2D4A4CF9001D9555 /* Swigaato */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02720EAA2D4A4CF9001D9555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02720EB72D4A4D04001D9555 /* Preview Assets.xcassets in Resources */,
+				02720EB42D4A4D04001D9555 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02720EA82D4A4CF9001D9555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029B50142D5098CD00AF619A /* EditProfileView.swift in Sources */,
+				029B50182D5098F000AF619A /* NotificationSettingsView.swift in Sources */,
+				02BB8D602D4C8CEA003F2951 /* ForgetPasswordView.swift in Sources */,
+				02720EC52D4A4DAE001D9555 /* LoginView.swift in Sources */,
+				0254E4A02D4CACF80000BB78 /* FoodData.swift in Sources */,
+				021832B52D4B90B20043AF7D /* HomeView.swift in Sources */,
+				02720EB22D4A4CF9001D9555 /* ContentView.swift in Sources */,
+				028A373E2D4CF034008B5D81 /* FoodDetailsView.swift in Sources */,
+				02720EB02D4A4CF9001D9555 /* FigmaToSwiftUIApp.swift in Sources */,
+				029B50242D50A68F00AF619A /* FoodDataChinese.swift in Sources */,
+				02720EC92D4A5973001D9555 /* OnboardingView.swift in Sources */,
+				0254E4A42D4CE0B10000BB78 /* AddItemView.swift in Sources */,
+				0254E49C2D4CACC90000BB78 /* FoodModel.swift in Sources */,
+				0254E49E2D4CACE40000BB78 /* FoodItemView.swift in Sources */,
+				021832B02D4B761A0043AF7D /* SignUpView.swift in Sources */,
+				029B501C2D509E6E00AF619A /* ChineseFoodView.swift in Sources */,
+				029B50162D5098E300AF619A /* AppSettingsView.swift in Sources */,
+				029B50222D50A67D00AF619A /* FoodDataIndian.swift in Sources */,
+				029B501A2D509E5800AF619A /* IndianFoodView.swift in Sources */,
+				029B50122D5098B400AF619A /* ProfileView.swift in Sources */,
+				02720EC72D4A5711001D9555 /* SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		02720EB82D4A4D04001D9555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02720EB92D4A4D04001D9555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02720EBB2D4A4D04001D9555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Swigaato/Preview Content\"";
+				DEVELOPMENT_TEAM = T97Y37DPWY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.techexactly.FigmaToSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02720EBC2D4A4D04001D9555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Swigaato/Preview Content\"";
+				DEVELOPMENT_TEAM = T97Y37DPWY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.techexactly.FigmaToSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02720EA72D4A4CF9001D9555 /* Build configuration list for PBXProject "Swigaato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02720EB82D4A4D04001D9555 /* Debug */,
+				02720EB92D4A4D04001D9555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02720EBA2D4A4D04001D9555 /* Build configuration list for PBXNativeTarget "Swigaato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02720EBB2D4A4D04001D9555 /* Debug */,
+				02720EBC2D4A4D04001D9555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02720EA42D4A4CF9001D9555 /* Project object */;
+}
