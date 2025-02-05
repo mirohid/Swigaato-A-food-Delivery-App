@@ -20,6 +20,8 @@ struct HomeView: View {
     
     let foodItems = FoodData.foodItems
     
+    
+   // Filtering and Selecting Food Items
     var filteredItems: [FoodModel] {
         if searchText.isEmpty {
             return foodItems
@@ -31,6 +33,7 @@ struct HomeView: View {
     var selectedFoodItems: [FoodModel] {
         foodItems.filter { selectedItems.contains($0.id) }
     }
+    
     
     var body: some View {
         NavigationStack {
@@ -308,8 +311,6 @@ struct SideMenuView: View {
         }
     }
 }
-
-
 
 // Preview
 struct HomeView_Previews: PreviewProvider {
