@@ -30,6 +30,12 @@
 		029B50222D50A67D00AF619A /* FoodDataIndian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50212D50A67D00AF619A /* FoodDataIndian.swift */; };
 		029B50242D50A68F00AF619A /* FoodDataChinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B50232D50A68F00AF619A /* FoodDataChinese.swift */; };
 		02BB8D602D4C8CEA003F2951 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB8D5F2D4C8CEA003F2951 /* ForgetPasswordView.swift */; };
+		42B68CE62D56289100D5F921 /* ViewModelSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68CE52D56289100D5F921 /* ViewModelSignUp.swift */; };
+		42B68CE92D5629BE00D5F921 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68CE82D5629BE00D5F921 /* MainModel.swift */; };
+		42B68CEB2D562A0200D5F921 /* ViewModelLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68CEA2D562A0200D5F921 /* ViewModelLogin.swift */; };
+		42B68CF42D563C2F00D5F921 /* GoogleSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68CF32D563C2F00D5F921 /* GoogleSignInViewModel.swift */; };
+		42B68CF62D563DFF00D5F921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B68CF52D563DFF00D5F921 /* GoogleService-Info.plist */; };
+		A66F447734D862864EE31CF8 /* Pods_Swigaato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +63,15 @@
 		029B50212D50A67D00AF619A /* FoodDataIndian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataIndian.swift; sourceTree = "<group>"; };
 		029B50232D50A68F00AF619A /* FoodDataChinese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataChinese.swift; sourceTree = "<group>"; };
 		02BB8D5F2D4C8CEA003F2951 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
+		2AAA2F32D50A9442DD830E95 /* Pods-Swigaato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swigaato.release.xcconfig"; path = "Target Support Files/Pods-Swigaato/Pods-Swigaato.release.xcconfig"; sourceTree = "<group>"; };
+		42B68CE52D56289100D5F921 /* ViewModelSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSignUp.swift; sourceTree = "<group>"; };
+		42B68CE82D5629BE00D5F921 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		42B68CEA2D562A0200D5F921 /* ViewModelLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelLogin.swift; sourceTree = "<group>"; };
+		42B68CF32D563C2F00D5F921 /* GoogleSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewModel.swift; sourceTree = "<group>"; };
+		42B68CF52D563DFF00D5F921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42B68CF72D563F3E00D5F921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swigaato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C071120FB4AE23C1D919BB08 /* Pods-Swigaato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swigaato.debug.xcconfig"; path = "Target Support Files/Pods-Swigaato/Pods-Swigaato.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A66F447734D862864EE31CF8 /* Pods_Swigaato.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +128,8 @@
 			children = (
 				02720EAE2D4A4CF9001D9555 /* Swigaato */,
 				02720EAD2D4A4CF9001D9555 /* Products */,
+				DA626A91DBAE1A001C41E718 /* Pods */,
+				921D05F2D12164ADAD9E2319 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +144,8 @@
 		02720EAE2D4A4CF9001D9555 /* Swigaato */ = {
 			isa = PBXGroup;
 			children = (
+				42B68CF72D563F3E00D5F921 /* Info.plist */,
+				42B68CF52D563DFF00D5F921 /* GoogleService-Info.plist */,
 				021832B32D4B907E0043AF7D /* AppEntry */,
 				021832B22D4B90740043AF7D /* App */,
 				02720EBF2D4A4D61001D9555 /* Core */,
@@ -174,6 +194,8 @@
 		02720EC02D4A4D68001D9555 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				42B68CF22D563C1D00D5F921 /* GoogleSignInViewModel */,
+				42B68CE72D5629AA00D5F921 /* Model */,
 				02720EC32D4A4D90001D9555 /* ForgetPassword */,
 				02720EC22D4A4D7E001D9555 /* SignUpView */,
 				02720EC12D4A4D75001D9555 /* LoginView */,
@@ -184,7 +206,8 @@
 		02720EC12D4A4D75001D9555 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				02720EC42D4A4DAE001D9555 /* LoginView.swift */,
+				42B68CEF2D562D0400D5F921 /* View */,
+				42B68CEE2D562CF500D5F921 /* ViewModel */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -192,7 +215,8 @@
 		02720EC22D4A4D7E001D9555 /* SignUpView */ = {
 			isa = PBXGroup;
 			children = (
-				021832AF2D4B761A0043AF7D /* SignUpView.swift */,
+				42B68CF12D562D1500D5F921 /* ViewModel */,
+				42B68CF02D562D0F00D5F921 /* View */,
 			);
 			path = SignUpView;
 			sourceTree = "<group>";
@@ -244,6 +268,71 @@
 			path = FoodData;
 			sourceTree = "<group>";
 		};
+		42B68CE72D5629AA00D5F921 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42B68CE82D5629BE00D5F921 /* MainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42B68CEE2D562CF500D5F921 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42B68CEA2D562A0200D5F921 /* ViewModelLogin.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42B68CEF2D562D0400D5F921 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02720EC42D4A4DAE001D9555 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42B68CF02D562D0F00D5F921 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				021832AF2D4B761A0043AF7D /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42B68CF12D562D1500D5F921 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42B68CE52D56289100D5F921 /* ViewModelSignUp.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42B68CF22D563C1D00D5F921 /* GoogleSignInViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42B68CF32D563C2F00D5F921 /* GoogleSignInViewModel.swift */,
+			);
+			path = GoogleSignInViewModel;
+			sourceTree = "<group>";
+		};
+		921D05F2D12164ADAD9E2319 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA626A91DBAE1A001C41E718 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C071120FB4AE23C1D919BB08 /* Pods-Swigaato.debug.xcconfig */,
+				2AAA2F32D50A9442DD830E95 /* Pods-Swigaato.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,9 +340,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02720EBA2D4A4D04001D9555 /* Build configuration list for PBXNativeTarget "Swigaato" */;
 			buildPhases = (
+				EC314159BD7B540F828FB489 /* [CP] Check Pods Manifest.lock */,
 				02720EA82D4A4CF9001D9555 /* Sources */,
 				02720EA92D4A4CF9001D9555 /* Frameworks */,
 				02720EAA2D4A4CF9001D9555 /* Resources */,
+				C6AEE0A6315D92969B4B69D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,12 +393,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B68CF62D563DFF00D5F921 /* GoogleService-Info.plist in Resources */,
 				02720EB72D4A4D04001D9555 /* Preview Assets.xcassets in Resources */,
 				02720EB42D4A4D04001D9555 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6AEE0A6315D92969B4B69D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swigaato/Pods-Swigaato-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swigaato/Pods-Swigaato-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swigaato/Pods-Swigaato-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC314159BD7B540F828FB489 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swigaato-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02720EA82D4A4CF9001D9555 /* Sources */ = {
@@ -318,6 +452,7 @@
 				029B50182D5098F000AF619A /* NotificationSettingsView.swift in Sources */,
 				02BB8D602D4C8CEA003F2951 /* ForgetPasswordView.swift in Sources */,
 				02720EC52D4A4DAE001D9555 /* LoginView.swift in Sources */,
+				42B68CEB2D562A0200D5F921 /* ViewModelLogin.swift in Sources */,
 				0254E4A02D4CACF80000BB78 /* FoodData.swift in Sources */,
 				021832B52D4B90B20043AF7D /* HomeView.swift in Sources */,
 				02720EB22D4A4CF9001D9555 /* ContentView.swift in Sources */,
@@ -327,11 +462,14 @@
 				02720EC92D4A5973001D9555 /* OnboardingView.swift in Sources */,
 				0254E4A42D4CE0B10000BB78 /* AddItemView.swift in Sources */,
 				0254E49C2D4CACC90000BB78 /* FoodModel.swift in Sources */,
+				42B68CE92D5629BE00D5F921 /* MainModel.swift in Sources */,
 				0254E49E2D4CACE40000BB78 /* FoodItemView.swift in Sources */,
+				42B68CE62D56289100D5F921 /* ViewModelSignUp.swift in Sources */,
 				021832B02D4B761A0043AF7D /* SignUpView.swift in Sources */,
 				029B501C2D509E6E00AF619A /* ChineseFoodView.swift in Sources */,
 				029B50162D5098E300AF619A /* AppSettingsView.swift in Sources */,
 				029B50222D50A67D00AF619A /* FoodDataIndian.swift in Sources */,
+				42B68CF42D563C2F00D5F921 /* GoogleSignInViewModel.swift in Sources */,
 				029B501A2D509E5800AF619A /* IndianFoodView.swift in Sources */,
 				029B50122D5098B400AF619A /* ProfileView.swift in Sources */,
 				02720EC72D4A5711001D9555 /* SplashScreenView.swift in Sources */,
@@ -457,6 +595,7 @@
 		};
 		02720EBB2D4A4D04001D9555 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C071120FB4AE23C1D919BB08 /* Pods-Swigaato.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -466,6 +605,7 @@
 				DEVELOPMENT_TEAM = T97Y37DPWY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Swigaato/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -486,6 +626,7 @@
 		};
 		02720EBC2D4A4D04001D9555 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AAA2F32D50A9442DD830E95 /* Pods-Swigaato.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -495,6 +636,7 @@
 				DEVELOPMENT_TEAM = T97Y37DPWY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Swigaato/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

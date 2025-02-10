@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ForgetPasswordView: View {
     @State private var email: String = ""
-    @Environment (\.dismiss) var GoBack
+    @Environment(\.dismiss) var GoBack
     
     var body: some View {
         NavigationStack{

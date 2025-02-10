@@ -1,0 +1,6 @@
+framework module Pods_Swigaato {
+  umbrella header "Pods-Swigaato-umbrella.h"
+
+  export *
+  module * { export * }
+}
