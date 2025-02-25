@@ -47,6 +47,8 @@
 		42DF58292D6DD5EB00563606 /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58282D6DD5EB00563606 /* CategoryCard.swift */; };
 		42DF582B2D6DD5ED00563606 /* OfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF582A2D6DD5ED00563606 /* OfferCard.swift */; };
 		42DF582D2D6DE2E400563606 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF582C2D6DE2E400563606 /* HeaderView.swift */; };
+		42DF582F2D6DE82400563606 /* LocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF582E2D6DE82400563606 /* LocationPickerView.swift */; };
+		42DF58312D6DE83800563606 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58302D6DE83800563606 /* LocationManager.swift */; };
 		A66F447734D862864EE31CF8 /* Pods_Swigaato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		42DF58282D6DD5EB00563606 /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		42DF582A2D6DD5ED00563606 /* OfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard.swift; sourceTree = "<group>"; };
 		42DF582C2D6DE2E400563606 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		42DF582E2D6DE82400563606 /* LocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerView.swift; sourceTree = "<group>"; };
+		42DF58302D6DE83800563606 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swigaato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C071120FB4AE23C1D919BB08 /* Pods-Swigaato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swigaato.debug.xcconfig"; path = "Target Support Files/Pods-Swigaato/Pods-Swigaato.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,8 @@
 		021832B12D4B90500043AF7D /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				42DF58302D6DE83800563606 /* LocationManager.swift */,
+				42DF582E2D6DE82400563606 /* LocationPickerView.swift */,
 				021832B42D4B90B20043AF7D /* HomeView.swift */,
 				42DF58222D6DD5DB00563606 /* RestaurantModel.swift */,
 				42DF58242D6DD5E000563606 /* CategoryModel.swift */,
@@ -491,6 +497,7 @@
 				02720EC52D4A4DAE001D9555 /* LoginView.swift in Sources */,
 				42DF582D2D6DE2E400563606 /* HeaderView.swift in Sources */,
 				42B68CEB2D562A0200D5F921 /* ViewModelLogin.swift in Sources */,
+				42DF582F2D6DE82400563606 /* LocationPickerView.swift in Sources */,
 				0254E4A02D4CACF80000BB78 /* FoodData.swift in Sources */,
 				42DF58252D6DD5E000563606 /* CategoryModel.swift in Sources */,
 				42DF58272D6DD5E500563606 /* RestaurantCard.swift in Sources */,
@@ -521,6 +528,7 @@
 				02720EC72D4A5711001D9555 /* SplashScreenView.swift in Sources */,
 				42DF582B2D6DD5ED00563606 /* OfferCard.swift in Sources */,
 				42DF581D2D6DD09A00563606 /* OrderModel.swift in Sources */,
+				42DF58312D6DE83800563606 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

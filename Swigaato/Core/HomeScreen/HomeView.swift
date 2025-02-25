@@ -21,6 +21,8 @@ struct HomeView: View {
     @State private var selectedFood: FoodModel?
     @State private var itemCounts: [UUID: Int] = [:]
     
+    @StateObject private var locationManager = LocationManager()
+    
     let foodItems = FoodData.foodItems
     
     // MARK: - Computed Properties
@@ -41,7 +43,6 @@ struct HomeView: View {
     // Add new properties
         @State private var selectedCategory: String? = nil
         @State private var showLocationPicker = false
-        @State private var currentLocation = "New York, NY"
         
         // Add reference to sample data
         let categories = CategoryData.categories
@@ -121,7 +122,7 @@ struct HomeView: View {
                         HStack {
                             Image(systemName: "location.fill")
                                 .foregroundColor(.black)
-                            Text(currentLocation)
+                            Text(locationManager.locationString)
                                 .foregroundColor(.black)
                             Image(systemName: "chevron.down")
                                 .foregroundColor(.black)
@@ -250,8 +251,7 @@ struct HomeView: View {
                     .presentationDetents([.medium, .large])
             }
             .sheet(isPresented: $showLocationPicker) {
-                // Placeholder for location picker
-                Text("Location Picker")
+                LocationPickerView(locationManager: locationManager)
                     .presentationDetents([.medium])
             }
             .onAppear {
