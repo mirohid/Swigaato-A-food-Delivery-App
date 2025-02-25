@@ -268,15 +268,40 @@ struct HomeView: View {
 struct SideMenuView: View {
     @Binding var isMenuOpen: Bool
     @Binding var navigateToLogin: Bool
-
+    
     @State private var showProfileSubmenu = false
     @State private var showSettingsSubmenu = false
-    
     @State private var showFoodSubmenu = false
+    @State private var showOrdersSubmenu = false
     
-    @State private var selectedItems: Set<UUID> = [] // Track selected items
-    @State private var itemCounts: [UUID: Int] = [:] // Track item counts
-
+    @State private var selectedItems: Set<UUID> = []
+    @State private var itemCounts: [UUID: Int] = [:]
+    
+    // Define menu structure
+    private let menuItems: [MenuItem] = [
+        MenuItem(title: "Food", icon: "square.grid.3x3", items: [
+            SubMenuItem(title: "Indian", destination: .indian),
+            SubMenuItem(title: "Chinese", destination: .chinese),
+            SubMenuItem(title: "Italian", destination: .other("Italian")),
+            SubMenuItem(title: "Mexican", destination: .other("Mexican"))
+        ]),
+        MenuItem(title: "Orders", icon: "clock.fill", items: [
+            SubMenuItem(title: "Active Orders", destination: .orders),
+            SubMenuItem(title: "Order History", destination: .other("History")),
+            SubMenuItem(title: "Favorites", destination: .other("Favorites"))
+        ]),
+        MenuItem(title: "Profile", icon: "person", items: [
+            SubMenuItem(title: "View Profile", destination: .profile),
+            SubMenuItem(title: "Edit Profile", destination: .editProfile),
+            SubMenuItem(title: "Addresses", destination: .other("Addresses"))
+        ]),
+        MenuItem(title: "Settings", icon: "gear", items: [
+            SubMenuItem(title: "App Settings", destination: .appSettings),
+            SubMenuItem(title: "Notifications", destination: .notifications),
+            SubMenuItem(title: "Payment Methods", destination: .other("Payments"))
+        ])
+    ]
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -290,104 +315,28 @@ struct SideMenuView: View {
                             }
                         }
                 }
-
+                
                 // Menu Content
                 HStack {
                     VStack(alignment: .leading, spacing: 20) {
                         // Profile Header
-                        HStack {
-                            Image(systemName: "person.crop.circle.fill")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Hey, 👋")
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                Text("Ohid iOS Dev")
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .bold()
-                            }
-                        }
-                        .padding(.top, 50)
-
+                        ProfileHeaderView()
+                        
                         Divider().background(.white)
-
+                        
                         ScrollView {
-                            VStack(alignment: .leading, spacing: 20) {
-                                
-                                DisclosureGroup(isExpanded: $showFoodSubmenu) {
-                                    VStack(alignment: .leading, spacing: 10) {
-                                        NavigationLink(destination: IndianFoodView(selectedItems: $selectedItems, itemCounts: $itemCounts)) {
-                                            Text("Indian")
-                                                .foregroundColor(.white)
-                                        }.padding()
-                                        NavigationLink(destination: ChineseFoodView()) {
-                                            Text("Chinese")
-                                                .foregroundColor(.white)
-                                        }.padding()
-                                    }
-                                    .padding(.leading, 20)
-                                } label: {
-                                    Label("Food", systemImage: "square.grid.3x3")
-                                        .foregroundColor(.white)
-                                        .bold()
+                            VStack(alignment: .leading, spacing: 15) {
+                                ForEach(menuItems) { menuItem in
+                                    MenuItemView(item: menuItem, selectedItems: $selectedItems, itemCounts: $itemCounts)
                                 }
                                 
-                                
-                                
-                                
-                                // Profile Submenu
-                                DisclosureGroup(isExpanded: $showProfileSubmenu) {
-                                    VStack(alignment: .leading, spacing: 10) {
-                                        NavigationLink(destination: ProfileView()) {
-                                            Text("View Profile")
-                                                .foregroundColor(.white)
-                                        }.padding()
-                                        NavigationLink(destination: EditProfileView()) {
-                                            Text("Edit Profile")
-                                                .foregroundColor(.white)
-                                        }.padding()
-                                    }
-                                    .padding(.leading, 20)
-                                } label: {
-                                    Label("Profile", systemImage: "person")
-                                        .foregroundColor(.white)
-                                        .bold()
-                                }
-
-                                // Settings Submenu
-                                DisclosureGroup(isExpanded: $showSettingsSubmenu) {
-                                    VStack(alignment: .leading, spacing: 10) {
-                                        NavigationLink(destination: AppSettingsView()) {
-                                            Text("App Settings")
-                                                .foregroundColor(.white)
-                                        }.padding()
-                                        NavigationLink(destination: NotificationSettingsView()) {
-                                            Text("Notification Settings")
-                                                .foregroundColor(.white)
-                                        }.padding()
-                                    }
-                                    .padding(.leading, 20)
-                                } label: {
-                                    Label("Settings", systemImage: "gear")
-                                        .foregroundColor(.white)
-                                }
-
                                 Divider().background(.white).padding(.vertical, 10)
-
+                                
+                                // Additional Features Section
+                                AdditionalFeaturesView()
+                                
                                 // Logout Button
-                                Button(action: {
-                                    withAnimation {
-                                        isMenuOpen = false
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
-                                            navigateToLogin = true
-                                        }
-                                    }
-                                }) {
-                                    Label("Logout", systemImage: "power")
-                                        .foregroundColor(.white)
-                                }
+                                LogoutButton(isMenuOpen: $isMenuOpen, navigateToLogin: $navigateToLogin)
                             }
                         }
                     }
@@ -395,13 +344,154 @@ struct SideMenuView: View {
                     .frame(width: 250)
                     .background(Color.black.opacity(0.90))
                     .edgesIgnoringSafeArea(.top)
-                    .offset(x: isMenuOpen ? 0 : -300) // Slide-in animation
-
+                    .offset(x: isMenuOpen ? 0 : -300)
+                    
                     Spacer()
                 }
             }
             .animation(.spring(response: 0.3, blendDuration: 0.2), value: isMenuOpen)
         }
+    }
+}
+
+// MARK: - Supporting Types
+private struct MenuItem: Identifiable {
+    let id = UUID()
+    let title: String
+    let icon: String
+    let items: [SubMenuItem]
+}
+
+private struct SubMenuItem: Identifiable {
+    let id = UUID()
+    let title: String
+    let destination: MenuDestination
+}
+
+private enum MenuDestination {
+    case indian, chinese, profile, editProfile, appSettings, notifications, orders, other(String)
+}
+
+// MARK: - Supporting Views
+private struct ProfileHeaderView: View {
+    var body: some View {
+        HStack {
+            Image(systemName: "person.crop.circle.fill")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Hey, 👋")
+                    .foregroundColor(.white)
+                    .font(.headline)
+                Text("Ohid iOS Dev")
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .bold()
+            }
+        }
+        .padding(.top, 50)
+    }
+}
+
+private struct MenuItemView: View {
+    let item: MenuItem
+    @State private var isExpanded = false
+    @Binding var selectedItems: Set<UUID>
+    @Binding var itemCounts: [UUID: Int]
+    
+    var body: some View {
+        DisclosureGroup(
+            isExpanded: $isExpanded,
+            content: {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(item.items) { subItem in
+                        NavigationLink(destination: destinationView(for: subItem.destination)) {
+                            Text(subItem.title)
+                                .foregroundColor(.white)
+                                .padding(.leading, 35)
+                        }
+                        .padding(.vertical, 5)
+                    }
+                }
+            },
+            label: {
+                Label(item.title, systemImage: item.icon)
+                    .foregroundColor(.white)
+                    .font(.headline)
+            }
+        )
+        .accentColor(.white)
+    }
+    
+    @ViewBuilder
+    private func destinationView(for destination: MenuDestination) -> some View {
+        switch destination {
+        case .indian:
+            IndianFoodView(selectedItems: $selectedItems, itemCounts: $itemCounts)
+        case .chinese:
+            ChineseFoodView()
+        case .profile:
+            ProfileView()
+        case .editProfile:
+            EditProfileView()
+        case .appSettings:
+            AppSettingsView()
+        case .notifications:
+            NotificationSettingsView()
+        case .orders:
+            OrdersListView()
+        case .other(let title):
+            Text(title)
+        }
+    }
+}
+
+private struct AdditionalFeaturesView: View {
+    @State private var isDarkMode = false
+    @State private var isNotificationsEnabled = false
+    
+    var body: some View {
+        VStack(spacing: 15) {
+            Toggle(isOn: $isDarkMode) {
+                Label("Dark Mode", systemImage: "moon.fill")
+            }
+            .tint(.white)
+            
+            Toggle(isOn: $isNotificationsEnabled) {
+                Label("Notifications", systemImage: "bell.fill")
+            }
+            .tint(.white)
+        }
+        .foregroundColor(.white)
+        .padding(.horizontal)
+    }
+}
+
+private struct LogoutButton: View {
+    @Binding var isMenuOpen: Bool
+    @Binding var navigateToLogin: Bool
+    
+    var body: some View {
+        Button(action: {
+            withAnimation {
+                isMenuOpen = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+                    navigateToLogin = true
+                }
+            }
+        }) {
+            HStack {
+                Image(systemName: "power")
+                Text("Logout")
+                    .fontWeight(.medium)
+            }
+            .foregroundColor(.red)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color.white.opacity(0.1))
+            .cornerRadius(10)
+        }
+        .padding(.horizontal)
     }
 }
 

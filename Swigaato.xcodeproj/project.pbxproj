@@ -46,6 +46,7 @@
 		42DF58272D6DD5E500563606 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58262D6DD5E500563606 /* RestaurantCard.swift */; };
 		42DF58292D6DD5EB00563606 /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58282D6DD5EB00563606 /* CategoryCard.swift */; };
 		42DF582B2D6DD5ED00563606 /* OfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF582A2D6DD5ED00563606 /* OfferCard.swift */; };
+		42DF582D2D6DE2E400563606 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF582C2D6DE2E400563606 /* HeaderView.swift */; };
 		A66F447734D862864EE31CF8 /* Pods_Swigaato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		42DF58262D6DD5E500563606 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
 		42DF58282D6DD5EB00563606 /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		42DF582A2D6DD5ED00563606 /* OfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard.swift; sourceTree = "<group>"; };
+		42DF582C2D6DE2E400563606 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swigaato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C071120FB4AE23C1D919BB08 /* Pods-Swigaato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swigaato.debug.xcconfig"; path = "Target Support Files/Pods-Swigaato/Pods-Swigaato.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +267,7 @@
 		029B50102D50987700AF619A /* SubMenuScreens */ = {
 			isa = PBXGroup;
 			children = (
+				42DF582C2D6DE2E400563606 /* HeaderView.swift */,
 				029B50112D5098B300AF619A /* ProfileView.swift */,
 				029B50132D5098CD00AF619A /* EditProfileView.swift */,
 				029B50152D5098E300AF619A /* AppSettingsView.swift */,
@@ -486,6 +489,7 @@
 				02BB8D602D4C8CEA003F2951 /* ForgetPasswordView.swift in Sources */,
 				42DF58192D6DD08900563606 /* ProfileViewModel.swift in Sources */,
 				02720EC52D4A4DAE001D9555 /* LoginView.swift in Sources */,
+				42DF582D2D6DE2E400563606 /* HeaderView.swift in Sources */,
 				42B68CEB2D562A0200D5F921 /* ViewModelLogin.swift in Sources */,
 				0254E4A02D4CACF80000BB78 /* FoodData.swift in Sources */,
 				42DF58252D6DD5E000563606 /* CategoryModel.swift in Sources */,
