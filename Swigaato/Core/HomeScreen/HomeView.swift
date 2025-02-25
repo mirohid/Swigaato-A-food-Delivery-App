@@ -252,7 +252,7 @@ struct HomeView: View {
             }
             .sheet(isPresented: $showLocationPicker) {
                 LocationPickerView(locationManager: locationManager)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.medium, .large])
             }
             .onAppear {
                 orderViewModel.fetchOrders()

@@ -7,12 +7,19 @@ struct LocationPickerView: View {
     @ObservedObject var locationManager: LocationManager
     @State private var searchText = ""
     
+    // Sample recent locations
+    let recentLocations = [
+        "Home: 123 Main St",
+        "Work: 456 Office Ave",
+        "Gym: 789 Fitness Blvd"
+    ]
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
                 // Current Location Button
                 Button(action: {
-                    locationManager.requestLocation()
+                    locationManager.checkLocationAuthorization()
                     dismiss()
                 }) {
                     HStack {
@@ -21,7 +28,7 @@ struct LocationPickerView: View {
                         Text("Use Current Location")
                             .foregroundColor(.blue)
                         Spacer()
-                        if locationManager.isLoading {
+                        if locationManager.locationString == "Fetching location..." {
                             ProgressView()
                         }
                     }
@@ -35,42 +42,67 @@ struct LocationPickerView: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
                     TextField("Search location", text: $searchText)
-                        .textFieldStyle(PlainTextFieldStyle())
                         .onChange(of: searchText) { newValue in
                             locationManager.searchLocation(newValue)
                         }
-                    if !searchText.isEmpty {
-                        Button(action: { searchText = "" }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.gray)
-                        }
-                    }
                 }
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
                 
-                if locationManager.isLoading {
-                    ProgressView()
-                        .padding()
-                } else {
+                if !searchText.isEmpty && !locationManager.searchResults.isEmpty {
                     // Search Results
-                    if !locationManager.searchResults.isEmpty {
-                        LocationList(
-                            title: "Search Results",
-                            locations: locationManager.searchResults,
-                            locationManager: locationManager,
-                            dismiss: dismiss
-                        )
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Search Results")
+                                .font(.headline)
+                            
+                            ForEach(locationManager.searchResults) { result in
+                                LocationResultRow(result: result) {
+                                    locationManager.selectLocation(result)
+                                    dismiss()
+                                }
+                            }
+                        }
                     }
+                } else {
                     // Recent Locations
-                    else if !locationManager.recentLocations.isEmpty {
-                        LocationList(
-                            title: "Recent Locations",
-                            locations: locationManager.recentLocations,
-                            locationManager: locationManager,
-                            dismiss: dismiss
-                        )
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Recent Locations")
+                            .font(.headline)
+                        
+                        if locationManager.recentLocations.isEmpty {
+                            ForEach(recentLocations, id: \.self) { location in
+                                Button(action: {
+                                    // Handle selecting sample location
+                                    let result = LocationResult(
+                                        id: UUID(),
+                                        name: location.components(separatedBy: ": ").first ?? "",
+                                        address: location,
+                                        location: CLLocation(latitude: 0, longitude: 0)
+                                    )
+                                    locationManager.selectLocation(result)
+                                    dismiss()
+                                }) {
+                                    HStack {
+                                        Image(systemName: "clock.fill")
+                                            .foregroundColor(.gray)
+                                        Text(location)
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                    }
+                                }
+                                .padding(.vertical, 8)
+                                Divider()
+                            }
+                        } else {
+                            ForEach(locationManager.recentLocations) { result in
+                                LocationResultRow(result: result) {
+                                    locationManager.selectLocation(result)
+                                    dismiss()
+                                }
+                            }
+                        }
                     }
                 }
                 
@@ -90,47 +122,26 @@ struct LocationPickerView: View {
     }
 }
 
-struct LocationList: View {
-    let title: String
-    let locations: [LocationResult]
-    let locationManager: LocationManager
-    let dismiss: DismissAction
-    
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(title)
-                    .font(.headline)
-                    .padding(.vertical, 5)
-                
-                ForEach(locations) { result in
-                    LocationResultRow(result: result) {
-                        locationManager.selectLocation(result)
-                        dismiss()
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct LocationResultRow: View {
     let result: LocationResult
     let action: () -> Void
     
     var body: some View {
         Button(action: action) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(result.name)
-                    .font(.body)
-                    .foregroundColor(.primary)
-                Text(result.address)
-                    .font(.caption)
-                    .foregroundColor(.gray)
+            HStack {
+                Image(systemName: "mappin.circle.fill")
+                    .foregroundColor(.blue)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(result.name)
+                        .foregroundColor(.primary)
+                    Text(result.address)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, 8)
         }
+        .padding(.vertical, 8)
         Divider()
     }
 } 

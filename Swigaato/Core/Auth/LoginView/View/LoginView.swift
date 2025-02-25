@@ -268,18 +268,23 @@ struct LoginView: View {
                 }
                 .padding()
             }
-            .background(Color.gray.opacity(0.1)) // Apply background color to ScrollView
+            .background(Color.gray.opacity(0.1))
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
             .alert(viewModel.alertMessage, isPresented: $viewModel.showAlert) {
-                Button("OK") {
-                    if viewModel.isSuccess {
-                        viewModel.navigateToHome = true
-                    }
-                }
+                Button("OK") { }
             }
             .navigationDestination(isPresented: $viewModel.navigateToHome) {
                 HomeView()
+                    .navigationBarBackButtonHidden(true)
+            }
+            .onChange(of: viewModel.isSuccess) { success in
+                if success {
+                    // Add a slight delay before navigation
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        viewModel.navigateToHome = true
+                    }
+                }
             }
         }
     }
@@ -290,3 +295,5 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+

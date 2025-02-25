@@ -1,7 +1,9 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import SwiftUI
 
+@MainActor
 class LoginViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var alertMessage = ""
@@ -15,19 +17,21 @@ class LoginViewModel: ObservableObject {
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-            guard let self = self else { return }
-            
-            if let error = error {
+        Task {
+            do {
+                let result = try await Auth.auth().signIn(withEmail: email, password: password)
+                self.alertMessage = "Login successful!"
+                self.isSuccess = true
+                self.showAlert = true
+                
+                // Delay navigation slightly to allow alert to be shown
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.navigateToHome = true
+                }
+            } catch {
                 self.alertMessage = error.localizedDescription
                 self.showAlert = true
-                return
             }
-            
-            self.alertMessage = "Login successful!"
-            self.isSuccess = true
-            self.showAlert = true
-            self.navigateToHome = true
         }
     }
 } 

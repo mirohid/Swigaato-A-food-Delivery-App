@@ -2,45 +2,36 @@ import CoreLocation
 import SwiftUI
 import MapKit
 
-class LocationManager: NSObject, ObservableObject {
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     private let geocoder = CLGeocoder()
     
-    @Published var currentLocation: CLLocation?
+    @Published var location: CLLocation?
     @Published var locationString = "Select Location"
     @Published var authorizationStatus: CLAuthorizationStatus?
+    @Published var lastKnownLocation: String = "New York, NY"
+    @Published var isLoading = false
     @Published var searchResults: [LocationResult] = []
     @Published var recentLocations: [LocationResult] = []
-    @Published var isLoading = false
-    @Published var errorMessage: String?
     
     override init() {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        setupLocationManager()
+        locationManager.distanceFilter = 100
+        checkLocationAuthorization()
     }
     
-    private func setupLocationManager() {
-        DispatchQueue.main.async {
-            self.authorizationStatus = self.locationManager.authorizationStatus
-        }
-    }
-    
-    func requestLocation() {
+    func checkLocationAuthorization() {
         isLoading = true
-        errorMessage = nil
-        locationString = "Fetching location..."
-        
         switch locationManager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            locationManager.startUpdatingLocation()
+        case .denied, .restricted:
+            locationString = "Location access denied"
+            isLoading = false
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
-        case .restricted, .denied:
-            isLoading = false
-            errorMessage = "Location access denied. Please enable in Settings."
-            locationString = "Location access denied"
-        case .authorizedWhenInUse, .authorizedAlways:
-            locationManager.requestLocation()
         @unknown default:
             break
         }
@@ -53,13 +44,10 @@ class LocationManager: NSObject, ObservableObject {
         }
         
         isLoading = true
-        errorMessage = nil
-        
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = query
         
-        // Set the region to the current location if available, otherwise use world
-        if let location = currentLocation {
+        if let location = location {
             let region = MKCoordinateRegion(
                 center: location.coordinate,
                 latitudinalMeters: 50000,
@@ -75,7 +63,7 @@ class LocationManager: NSObject, ObservableObject {
                 self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Search failed: \(error.localizedDescription)"
+                    print("Search error: \(error.localizedDescription)")
                     return
                 }
                 
@@ -83,22 +71,12 @@ class LocationManager: NSObject, ObservableObject {
                     guard let location = item.placemark.location else { return nil }
                     
                     let name = item.name ?? ""
-                    var addressComponents: [String] = []
-                    
-                    if let thoroughfare = item.placemark.thoroughfare {
-                        addressComponents.append(thoroughfare)
-                    }
-                    if let locality = item.placemark.locality {
-                        addressComponents.append(locality)
-                    }
-                    if let administrativeArea = item.placemark.administrativeArea {
-                        addressComponents.append(administrativeArea)
-                    }
-                    if let country = item.placemark.country {
-                        addressComponents.append(country)
-                    }
-                    
-                    let address = addressComponents.joined(separator: ", ")
+                    let address = [
+                        item.placemark.thoroughfare,
+                        item.placemark.locality,
+                        item.placemark.administrativeArea,
+                        item.placemark.country
+                    ].compactMap { $0 }.joined(separator: ", ")
                     
                     return LocationResult(
                         id: UUID(),
@@ -111,35 +89,29 @@ class LocationManager: NSObject, ObservableObject {
         }
     }
     
-    func selectLocation(_ locationResult: LocationResult) {
-        currentLocation = locationResult.location
-        locationString = "\(locationResult.name), \(locationResult.address)"
+    func selectLocation(_ result: LocationResult) {
+        location = result.location
+        locationString = "\(result.name), \(result.address)"
         
-        // Add to recent locations if not already present
-        if !recentLocations.contains(where: { $0.id == locationResult.id }) {
-            recentLocations.insert(locationResult, at: 0)
+        if !recentLocations.contains(where: { $0.id == result.id }) {
+            recentLocations.insert(result, at: 0)
             if recentLocations.count > 5 {
                 recentLocations.removeLast()
             }
         }
     }
-}
-
-// MARK: - CLLocationManagerDelegate
-extension LocationManager: CLLocationManagerDelegate {
+    
+    // MARK: - CLLocationManagerDelegate
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         DispatchQueue.main.async {
             self.authorizationStatus = manager.authorizationStatus
-            if manager.authorizationStatus == .authorizedWhenInUse ||
-                manager.authorizationStatus == .authorizedAlways {
-                self.requestLocation()
-            }
+            self.checkLocationAuthorization()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        self.currentLocation = location
+        guard let location = locations.last else { return }
+        self.location = location
         
         geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
             DispatchQueue.main.async {
@@ -147,25 +119,24 @@ extension LocationManager: CLLocationManagerDelegate {
                 self.isLoading = false
                 
                 if let error = error {
-                    self.errorMessage = "Geocoding failed: \(error.localizedDescription)"
-                    self.locationString = "Location error"
+                    print("Geocoding error: \(error.localizedDescription)")
                     return
                 }
                 
                 if let placemark = placemarks?.first {
-                    var addressComponents: [String] = []
+                    let city = placemark.locality ?? ""
+                    let state = placemark.administrativeArea ?? ""
+                    self.locationString = "\(city), \(state)"
+                    self.lastKnownLocation = self.locationString
                     
-                    if let name = placemark.name {
-                        addressComponents.append(name)
-                    }
-                    if let locality = placemark.locality {
-                        addressComponents.append(locality)
-                    }
-                    if let administrativeArea = placemark.administrativeArea {
-                        addressComponents.append(administrativeArea)
-                    }
-                    
-                    self.locationString = addressComponents.joined(separator: ", ")
+                    // Add current location to recent locations
+                    let result = LocationResult(
+                        id: UUID(),
+                        name: "Current Location",
+                        address: self.locationString,
+                        location: location
+                    )
+                    self.selectLocation(result)
                 }
             }
         }
@@ -173,14 +144,13 @@ extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         DispatchQueue.main.async {
+            print("Location error: \(error.localizedDescription)")
             self.isLoading = false
-            self.errorMessage = "Location error: \(error.localizedDescription)"
             self.locationString = "Location error"
         }
     }
 }
 
-// MARK: - Location Result Model
 struct LocationResult: Identifiable {
     let id: UUID
     let name: String
