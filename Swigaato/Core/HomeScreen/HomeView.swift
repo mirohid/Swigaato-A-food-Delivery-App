@@ -9,19 +9,21 @@ import SwiftUI
 
 // MARK: - Home View
 struct HomeView: View {
+    // MARK: - Properties
+    @StateObject private var orderViewModel = OrderViewModel()
+    @StateObject private var profileViewModel = ProfileViewModel()
     
     @State private var isMenuOpen: Bool = false
     @State private var searchText: String = ""
-    @State private var selectedItems: Set<UUID> = [] // Track selected items
-    @State private var navigateToLogin: Bool = false // Control navigation
-    @State private var showCart: Bool = false // Control navigation to AddItemView
-    @State private var selectedFood: FoodModel? // Track selected food item for sheet
-    @State private var itemCounts: [UUID: Int] = [:] // Track item counts
+    @State private var selectedItems: Set<UUID> = []
+    @State private var navigateToLogin: Bool = false
+    @State private var showCart: Bool = false
+    @State private var selectedFood: FoodModel?
+    @State private var itemCounts: [UUID: Int] = [:]
     
     let foodItems = FoodData.foodItems
     
-    
-   // Filtering and Selecting Food Items
+    // MARK: - Computed Properties
     var filteredItems: [FoodModel] {
         if searchText.isEmpty {
             return foodItems
@@ -35,10 +37,22 @@ struct HomeView: View {
     }
     
     
+    
+    // Add new properties
+        @State private var selectedCategory: String? = nil
+        @State private var showLocationPicker = false
+        @State private var currentLocation = "New York, NY"
+        
+        // Add reference to sample data
+        let categories = CategoryData.categories
+        let restaurants = RestaurantData.restaurants
+    
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
+                    // MARK: - Header
                     HStack {
                         // Menu Button
                         Button(action: {
@@ -56,7 +70,27 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        // Cart Icon
+                        // Orders Button
+                        NavigationLink(destination: OrdersListView()) {
+                            Image(systemName: "clock.fill")
+                                .font(.title)
+                                .foregroundColor(.black)
+                        }
+                        .padding(.top, 50)
+                        .padding(.bottom, 30)
+                        .padding(.trailing, 10)
+                        
+                        // Profile Button
+                        NavigationLink(destination: ProfileManagementView()) {
+                            Image(systemName: "person.crop.circle.fill")
+                                .font(.title)
+                                .foregroundColor(.black)
+                        }
+                        .padding(.top, 50)
+                        .padding(.bottom, 30)
+                        .padding(.trailing, 10)
+                        
+                        // Cart Button
                         Button(action: {
                             showCart = true
                         }) {
@@ -82,7 +116,20 @@ struct HomeView: View {
                         .padding(.trailing, 20)
                     }
                     
-                    // Search Bar
+                    // MARK: - Location Picker
+                    Button(action: { showLocationPicker = true }) {
+                        HStack {
+                            Image(systemName: "location.fill")
+                                .foregroundColor(.black)
+                            Text(currentLocation)
+                                .foregroundColor(.black)
+                            Image(systemName: "chevron.down")
+                                .foregroundColor(.black)
+                        }
+                        .padding(.vertical, 8)
+                    }
+                    
+                    // MARK: - Search Bar
                     ZStack(alignment: .trailing) {
                         TextField("Search food...", text: $searchText)
                             .padding()
@@ -101,26 +148,66 @@ struct HomeView: View {
                     }
                     .padding(.horizontal)
                     
-                    // Food Grid View
                     ScrollView {
-                        //----//
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                            ForEach(filteredItems) { item in
-                                FoodItemView(food: item, isSelected: selectedItems.contains(item.id)) {
-                                    if selectedItems.contains(item.id) {
-                                        selectedItems.remove(item.id)
-                                        itemCounts[item.id] = nil // Remove item from count when deselected
-                                    } else {
-                                        selectedItems.insert(item.id)
-                                        itemCounts[item.id] = 1 // Set initial count to 1
+                        VStack(spacing: 20) {
+                            // MARK: - Categories
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 15) {
+                                    ForEach(categories) { category in
+                                        CategoryCard(
+                                            category: category,
+                                            isSelected: selectedCategory == category.name
+                                        )
+                                        .onTapGesture {
+                                            selectedCategory = selectedCategory == category.name ? nil : category.name
+                                        }
                                     }
-                                }.onTapGesture {
-                                    selectedFood = item
+                                }
+                                .padding(.horizontal)
+                            }
+                            
+                            // MARK: - Restaurants
+                            VStack(alignment: .leading) {
+                                Text("Popular Restaurants")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .padding(.horizontal)
+                                
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 15) {
+                                        ForEach(restaurants) { restaurant in
+                                            RestaurantCard(restaurant: restaurant)
+                                        }
+                                    }
+                                    .padding(.horizontal)
                                 }
                             }
+                            
+                            // MARK: - Food Grid
+                            Text("Popular Items")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .padding(.horizontal)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                                ForEach(filteredItems) { item in
+                                    FoodItemView(food: item, isSelected: selectedItems.contains(item.id)) {
+                                        if selectedItems.contains(item.id) {
+                                            selectedItems.remove(item.id)
+                                            itemCounts[item.id] = nil
+                                        } else {
+                                            selectedItems.insert(item.id)
+                                            itemCounts[item.id] = 1
+                                        }
+                                    }
+                                    .onTapGesture {
+                                        selectedFood = item
+                                    }
+                                }
+                            }
+                            .padding()
                         }
-                        .padding()
-                        //---//
                     }
                     Spacer()
                 }
@@ -142,18 +229,17 @@ struct HomeView: View {
                         }
                 )
                 
-                // Side Menu
+                // MARK: - Side Menu
                 if isMenuOpen {
                     SideMenuView(isMenuOpen: $isMenuOpen, navigateToLogin: $navigateToLogin)
                         .transition(.move(edge: .leading))
                 }
                 
-                // Navigation to LoginView
+                // MARK: - Navigation Links
                 NavigationLink(destination: LoginView(), isActive: $navigateToLogin) {
                     EmptyView()
                 }
                 
-                // Navigation to AddItemView
                 NavigationLink(destination: AddItemView(itemCounts: $itemCounts, selectedItems: selectedFoodItems), isActive: $showCart) {
                     EmptyView()
                 }
@@ -163,14 +249,21 @@ struct HomeView: View {
                 FoodDetailView(food: food)
                     .presentationDetents([.medium, .large])
             }
-            
+            .sheet(isPresented: $showLocationPicker) {
+                // Placeholder for location picker
+                Text("Location Picker")
+                    .presentationDetents([.medium])
+            }
+            .onAppear {
+                orderViewModel.fetchOrders()
+                profileViewModel.fetchUserProfile()
+            }
         }
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
     }
 }
 
-import SwiftUI
 
 struct SideMenuView: View {
     @Binding var isMenuOpen: Bool

@@ -35,6 +35,17 @@
 		42B68CEB2D562A0200D5F921 /* ViewModelLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68CEA2D562A0200D5F921 /* ViewModelLogin.swift */; };
 		42B68CF42D563C2F00D5F921 /* GoogleSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B68CF32D563C2F00D5F921 /* GoogleSignInViewModel.swift */; };
 		42B68CF62D563DFF00D5F921 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B68CF52D563DFF00D5F921 /* GoogleService-Info.plist */; };
+		42DF58172D6DD05000563606 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58162D6DD05000563606 /* AddressModel.swift */; };
+		42DF58192D6DD08900563606 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58182D6DD08900563606 /* ProfileViewModel.swift */; };
+		42DF581B2D6DD09400563606 /* ProfileManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF581A2D6DD09400563606 /* ProfileManagementView.swift */; };
+		42DF581D2D6DD09A00563606 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF581C2D6DD09A00563606 /* OrderModel.swift */; };
+		42DF581F2D6DD0A200563606 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF581E2D6DD0A200563606 /* OrderViewModel.swift */; };
+		42DF58212D6DD0A900563606 /* OrdersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58202D6DD0A900563606 /* OrdersListView.swift */; };
+		42DF58232D6DD5DB00563606 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58222D6DD5DB00563606 /* RestaurantModel.swift */; };
+		42DF58252D6DD5E000563606 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58242D6DD5E000563606 /* CategoryModel.swift */; };
+		42DF58272D6DD5E500563606 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58262D6DD5E500563606 /* RestaurantCard.swift */; };
+		42DF58292D6DD5EB00563606 /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF58282D6DD5EB00563606 /* CategoryCard.swift */; };
+		42DF582B2D6DD5ED00563606 /* OfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF582A2D6DD5ED00563606 /* OfferCard.swift */; };
 		A66F447734D862864EE31CF8 /* Pods_Swigaato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +81,17 @@
 		42B68CF32D563C2F00D5F921 /* GoogleSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInViewModel.swift; sourceTree = "<group>"; };
 		42B68CF52D563DFF00D5F921 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42B68CF72D563F3E00D5F921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		42DF58162D6DD05000563606 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		42DF58182D6DD08900563606 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		42DF581A2D6DD09400563606 /* ProfileManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagementView.swift; sourceTree = "<group>"; };
+		42DF581C2D6DD09A00563606 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		42DF581E2D6DD0A200563606 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		42DF58202D6DD0A900563606 /* OrdersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListView.swift; sourceTree = "<group>"; };
+		42DF58222D6DD5DB00563606 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
+		42DF58242D6DD5E000563606 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		42DF58262D6DD5E500563606 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
+		42DF58282D6DD5EB00563606 /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		42DF582A2D6DD5ED00563606 /* OfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard.swift; sourceTree = "<group>"; };
 		6F47177F7BADCDE61647AC68 /* Pods_Swigaato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swigaato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C071120FB4AE23C1D919BB08 /* Pods-Swigaato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swigaato.debug.xcconfig"; path = "Target Support Files/Pods-Swigaato/Pods-Swigaato.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				021832B42D4B90B20043AF7D /* HomeView.swift */,
+				42DF58222D6DD5DB00563606 /* RestaurantModel.swift */,
+				42DF58242D6DD5E000563606 /* CategoryModel.swift */,
+				42DF58262D6DD5E500563606 /* RestaurantCard.swift */,
+				42DF58282D6DD5EB00563606 /* CategoryCard.swift */,
+				42DF582A2D6DD5ED00563606 /* OfferCard.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -106,6 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				02720EB12D4A4CF9001D9555 /* ContentView.swift */,
+				42DF58162D6DD05000563606 /* AddressModel.swift */,
+				42DF58182D6DD08900563606 /* ProfileViewModel.swift */,
+				42DF581A2D6DD09400563606 /* ProfileManagementView.swift */,
+				42DF581C2D6DD09A00563606 /* OrderModel.swift */,
+				42DF581E2D6DD0A200563606 /* OrderViewModel.swift */,
+				42DF58202D6DD0A900563606 /* OrdersListView.swift */,
 			);
 			path = AppEntry;
 			sourceTree = "<group>";
@@ -451,13 +484,19 @@
 				029B50142D5098CD00AF619A /* EditProfileView.swift in Sources */,
 				029B50182D5098F000AF619A /* NotificationSettingsView.swift in Sources */,
 				02BB8D602D4C8CEA003F2951 /* ForgetPasswordView.swift in Sources */,
+				42DF58192D6DD08900563606 /* ProfileViewModel.swift in Sources */,
 				02720EC52D4A4DAE001D9555 /* LoginView.swift in Sources */,
 				42B68CEB2D562A0200D5F921 /* ViewModelLogin.swift in Sources */,
 				0254E4A02D4CACF80000BB78 /* FoodData.swift in Sources */,
+				42DF58252D6DD5E000563606 /* CategoryModel.swift in Sources */,
+				42DF58272D6DD5E500563606 /* RestaurantCard.swift in Sources */,
 				021832B52D4B90B20043AF7D /* HomeView.swift in Sources */,
 				02720EB22D4A4CF9001D9555 /* ContentView.swift in Sources */,
+				42DF58292D6DD5EB00563606 /* CategoryCard.swift in Sources */,
 				028A373E2D4CF034008B5D81 /* FoodDetailsView.swift in Sources */,
+				42DF58232D6DD5DB00563606 /* RestaurantModel.swift in Sources */,
 				02720EB02D4A4CF9001D9555 /* FigmaToSwiftUIApp.swift in Sources */,
+				42DF581B2D6DD09400563606 /* ProfileManagementView.swift in Sources */,
 				029B50242D50A68F00AF619A /* FoodDataChinese.swift in Sources */,
 				02720EC92D4A5973001D9555 /* OnboardingView.swift in Sources */,
 				0254E4A42D4CE0B10000BB78 /* AddItemView.swift in Sources */,
@@ -466,13 +505,18 @@
 				0254E49E2D4CACE40000BB78 /* FoodItemView.swift in Sources */,
 				42B68CE62D56289100D5F921 /* ViewModelSignUp.swift in Sources */,
 				021832B02D4B761A0043AF7D /* SignUpView.swift in Sources */,
+				42DF58172D6DD05000563606 /* AddressModel.swift in Sources */,
 				029B501C2D509E6E00AF619A /* ChineseFoodView.swift in Sources */,
 				029B50162D5098E300AF619A /* AppSettingsView.swift in Sources */,
 				029B50222D50A67D00AF619A /* FoodDataIndian.swift in Sources */,
 				42B68CF42D563C2F00D5F921 /* GoogleSignInViewModel.swift in Sources */,
 				029B501A2D509E5800AF619A /* IndianFoodView.swift in Sources */,
 				029B50122D5098B400AF619A /* ProfileView.swift in Sources */,
+				42DF581F2D6DD0A200563606 /* OrderViewModel.swift in Sources */,
+				42DF58212D6DD0A900563606 /* OrdersListView.swift in Sources */,
 				02720EC72D4A5711001D9555 /* SplashScreenView.swift in Sources */,
+				42DF582B2D6DD5ED00563606 /* OfferCard.swift in Sources */,
+				42DF581D2D6DD09A00563606 /* OrderModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
